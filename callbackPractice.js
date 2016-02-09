@@ -133,7 +133,13 @@ uniq(names, function(uniqArr){
 
 
 
-    //Code Here for each
+    var each = function(arr, callback) {
+      for (var i = 0; i < arr.length; i++) {
+        var elem = arr[i];
+        var index = i;
+        callback(elem, index);
+      }
+    }
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 each(names, function(item, indice){
@@ -150,7 +156,13 @@ each(names, function(item, indice){
 
 
 
- //code here for getUserById
+ var getUserById = function(arr, id, callback) {
+   for (var i = 0; i < arr.length; i++) {
+     if (arr[i].id === id) {
+       callback(arr[i]);
+     }
+   }
+ }
 
 var users = [
   {
